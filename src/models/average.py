@@ -3,7 +3,7 @@ import datetime
 import pandas as pd
 import os
 
-directory = 'src/models/'
+directory = 'src/models/outputs/'
 submissions = {}
 columns = {}
 class_names = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
@@ -13,7 +13,7 @@ str_time = datetime.datetime.now().strftime('%Y%m%d%I%M')
 
 # read vectors from directory and save in dictionaries
 for file in os.listdir(directory):
-    if file.endswith(".csv"):
+    if file.endswith(".csv") and file.startswith("submission20180306"):
         submissions[file] = pd.read_csv(directory+file)
 
 real_sub = next(iter(submissions.values()))
@@ -23,6 +23,6 @@ for col in class_names:
     columns[col] = columns[col].mean(axis=1)
     real_sub[col] = columns[col]
 
-real_sub.to_csv('src/models/submission'+str_time+'.csv', index=False)
+real_sub.to_csv(directory+'submission'+str_time+'.csv', index=False)
 
 

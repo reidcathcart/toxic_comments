@@ -44,10 +44,10 @@ for class_name in class_names:
     train_target = train[class_name]
     classifier[class_name] = LogisticRegression(solver='sag')
 
-    cv_score = np.mean(cross_val_score(classifier[class_name], train_features, train_target,
-                                       cv=3, scoring='roc_auc', verbose=2))
-    scores.append(cv_score)
-    print('CV score for class {} is {}'.format(class_name, cv_score))
+    # cv_score = np.mean(cross_val_score(classifier[class_name], train_features, train_target,
+    #                                    cv=3, scoring='roc_auc', verbose=2))
+    # scores.append(cv_score)
+    # print('CV score for class {} is {}'.format(class_name, cv_score))
 
     classifier[class_name].fit(train_features, train_target)
     submission[class_name] = classifier[class_name].predict_proba(test_features)[:, 1]

@@ -81,4 +81,5 @@ target/
 # other extensions to ignore
 *.sav
 *.csv
+*.hdf5
 
