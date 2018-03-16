@@ -13,7 +13,7 @@ str_time = datetime.datetime.now().strftime('%Y%m%d%I%M')
 
 # read vectors from directory and save in dictionaries
 for file in os.listdir(directory):
-    if file.endswith(".csv") and file.startswith("submission20180306"):
+    if file.endswith(".csv"):
         submissions[file] = pd.read_csv(directory+file)
 
 real_sub = next(iter(submissions.values()))
