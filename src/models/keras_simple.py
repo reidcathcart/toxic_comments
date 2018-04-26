@@ -5,7 +5,7 @@ import pandas as pd
 from scipy.sparse import hstack
 import pickle
 from keras.models import Model, Sequential
-from keras.layers import Input, Dense, Embedding, SpatialDropout1D, concatenate
+from keras.layers import Input, Dense, Embedding, SpatialDropout1D, concatenate, Dropout
 from keras.layers import GRU, Bidirectional, GlobalAveragePooling1D, GlobalMaxPooling1D
 from keras.preprocessing import text, sequence
 from keras.callbacks import Callback, EarlyStopping, ModelCheckpoint
@@ -91,6 +91,7 @@ checkpoint = ModelCheckpoint('src/models/outputs/checkpoint'+str_time+'.h5',
 
 model = Sequential()
 model.add(Dense(200, activation='sigmoid', input_shape=(train_cols,)))
+model.add(Dropout(0.1))
 model.add(Dense(200, activation='hard_sigmoid'))
 model.add(Dense(6, activation="sigmoid"))
 model.compile(loss='binary_crossentropy',

@@ -82,4 +82,5 @@ target/
 *.sav
 *.csv
 *.hdf5
+*.h5
 
