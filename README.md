@@ -1,7 +1,64 @@
-Toxic Comments
-==============================
+# Toxic Comment Classification Challenge
 
-Toxic Comments from Kaggle
+This is an exercise to help me understand more about natural language processing, feature engineering, data cleansing and visualization in Python.
+
+## About the Data
+
+In this competition, you’re challenged to build a multi-headed model that’s capable of detecting different types of toxicity like threats, obscenity, insults, and identity-based hate better than Perspective’s current models. You’ll be using a dataset of comments from Wikipedia’s talk page edits. Improvements to the current model will hopefully help online discussion become more productive and respectful. The types of toxicity are:
+
+**toxic**
+
+**severe_toxic**
+
+**obscene**
+
+**threat**
+
+**insult**
+
+**identity_hate**
+
+You must create a model which predicts a probability of each type of toxicity for each comment.
+
+_Disclaimer: the dataset for this competition contains text that may be considered profane, vulgar, or offensive._
+
+The data contained the following files:
+
+**train.csv** - the training set, contains comments with their binary labels
+
+**test.csv** - the test set, you must predict the toxicity probabilities for these comments. To deter hand labeling, the test set contains some comments which are not included in scoring.
+
+**sample_submission.csv** - a sample submission file in the correct format
+
+Data and a more detailed description can be found [here](https://www.kaggle.com/c/jigsaw-toxic-comment-classification-challenge/data):
+
+## Find Analysis notebook [here](notebooks/Analysis.ipynb)
+
+## Interesting Plots
+![Count of flags](images/count_flags.png)
+
+![Percent of bad words](images/pct_bad_words.png)
+
+![Word Cloud](images/wordcloud.png)
+
+## Findings/things of note
+
+- Clean comments rarely have bad words contained
+- Clean comments aren't written in ALL CAPS as often as flagged comments
+
+## Libraries used:
+
+- pandas
+- numpy
+- scikit-learn
+- matplotlib
+- seaborn
+- plotly
+- nltk
+- wordcloud
+- scipy
+- spaCy
+- xgboost
 
 Project Organization
 ------------
