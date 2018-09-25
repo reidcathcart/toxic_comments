@@ -59,6 +59,9 @@ Data and a more detailed description can be found [here](https://www.kaggle.com/
 - scipy
 - spaCy
 - xgboost
+- tensorflow
+- keras
+- fasttext
 
 Project Organization
 ------------
