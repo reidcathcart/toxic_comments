@@ -37,7 +37,7 @@ Data and a more detailed description can be found [here](https://www.kaggle.com/
 ## Interesting Plots
 ![Count of flags](images/count_flags.png)
 
-![Percent of bad words](images/pct_bad_words.png)
+![Percent of bad words](images/pct_bad_words.PNG)
 
 ![Word Cloud](images/wordcloud.png)
 
